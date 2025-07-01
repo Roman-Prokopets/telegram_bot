@@ -1,14 +1,16 @@
 // Ваш токен бота
 // bot.js
 
-// Импортируем необходимые библиотеки
+require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
+// ...
+const token = process.env.TELEGRAM_BOT_TOKEN;
+// Импортируем необходимые библиотеки
 const fs = require('fs');
 const path = require('path');
 const schedule = require('node-schedule'); // Библиотека для планирования задач
 
 // Ваш токен бота. Замените его на свой реальный токен из BotFather.
-const token = '7414063764:AAF2tf8l5-5rtRngtkeGiwHgwTdpJn97BI8';
 // Создаем новый экземпляр бота с режимом поллинга
 const bot = new TelegramBot(token, { polling: true });
 
